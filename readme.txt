@@ -1,0 +1,7 @@
+今天主要做的是butterknife模块，他省去了很多复杂无味的工作（比如查找ID，设置监听等工作），给程序人员带来了很大的方便。
+当然，第一次接触到这个，遇到了很多麻烦，首先就是jar包问题，导入jar包后还需要在buildgradle中添加代码
+第2个就是运行过程中报错：找不到符号（解决办法就是使用@bindView代替@bind）
+第3个问题花费时间最长，也是最令人头疼痛的就是抛出：Multiple dex files define Lbutterknife/BindBool;（多dex文件定义）问题所在就是项目中包含了两个相关的R.anim文件，jar包和引用工程的源文件重复
+，解决途径就是删掉jar包里面的对应部分就可以了
+注意事项就是：在使用butterknife过程中自动生成是一定要把光标放在布局文件上，不然无法创建。
+还有就是由于版本更新问题，bindview代替了injectview。
